@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de pessoas</title>
+    <title>Lista de pessoas</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/estudando.png" type="image/x-icon">
+    <script src="javascript/script.js" defer></script>
 </head>
 
 <body>
@@ -13,8 +14,8 @@
     include './conexao.php';
     include './logic.php';
     ?>
-    <div id="quantidade-pessoas">
-        <div class="texto"><?= count(Pessoa::$list) ?></div>
+    <div id="add-pessoas">
+        <div class="texto">+</div>
     </div>
     <h1 id="pg-titulo">Pessoas</h1>
     <div id="pessoa-card-area">

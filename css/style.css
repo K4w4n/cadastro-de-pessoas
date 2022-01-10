@@ -50,12 +50,12 @@ body {
     border-color: rgb(53, 53, 53);
 }
 
-.pessoa-card, #quantidade-pessoas {
+.pessoa-card, #add-pessoas {
     transition-property: transform, box-shadow;
     transition-duration: 0.5s;
 }
 
-.pessoa-card:hover, #quantidade-pessoas:hover {
+.pessoa-card:hover, #add-pessoas:hover {
     box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.25);
     transform: scale(1.1);
 }
@@ -69,7 +69,7 @@ body {
     font-weight: 900;
 }
 
-#quantidade-pessoas {
+#add-pessoas {
     position: fixed;
     top: 90%;
     left: 95%;
@@ -77,11 +77,13 @@ body {
     height: 50px;
     padding-top: 2px;
     background-color: rgb(66, 66, 66);
+    font-size: xx-large;
     color: #fff;
     border-radius: 100%;
+    cursor: pointer;
 }
 
-#quantidade-pessoas .texto {
+#add-pessoas .texto {
     position: relative;
     text-align: center;
     line-height: 50px;
@@ -103,6 +105,10 @@ body {
 
 #status-conexao.erro {
     background-color: rgb(163, 1, 1);
+}
+
+.invisivel {
+    display: none;
 }
 
 @media only screen and (min-width: 600px) {}
