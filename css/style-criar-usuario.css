@@ -1,0 +1,28 @@
+#form-criar-usuario {
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+}
+
+#submit {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    background-color: rgb(53, 53, 53);
+    color: #fff;
+}
+
+input, select {
+    padding: 10px 10px 10px 10px;
+}
+
+input:first-child {
+    border-radius: 10px 10px 0px 0px;
+}
+
+input:last-child {
+    border-radius: 0px 0px 10px 10px;
+}
+
+#submit:hover {
+    background-color: rgb(29, 29, 29);
+}
