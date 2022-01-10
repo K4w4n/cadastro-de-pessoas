@@ -23,20 +23,21 @@ class Pessoa
                 printDado("Sobrenome", $pessoaSelecionada->sobrenome);
                 printDado("Genero", $pessoaSelecionada->genero);
                 printDado("Idade", $pessoaSelecionada->idade);
-                PrintDado('Frase', "Olá, meu nome é $pessoaSelecionada->nome $pessoaSelecionada->sobrenome, tenho $pessoaSelecionada->idade anos.");
+                printDado('Frase', $pessoaSelecionada->frase);
                 ?>
             </div>
         <?php
         endforeach;
     }
-    function __construct($novoNome, $novoSobrenome, $novoGenero, $novaIdade)
+    function __construct($id, $novoNome, $novoSobrenome, $novoGenero, $novaIdade, $novaFrase)
     {
         $this->nome = $novoNome;
         $this->sobrenome = $novoSobrenome;
         $this->genero = $novoGenero;
         $this->idade = $novaIdade;
+        $this->frase = $novaFrase;
         self::$list[] = $this;
-        $this->id = count(self::$list);
+        $this->id = $id;
     }
     public function print()
     {
@@ -47,15 +48,25 @@ class Pessoa
             printDado("Sobrenome", $this->sobrenome);
             printDado("Genero", $this->genero);
             printDado("Idade", $this->idade);
+            PrintDado('Frase', $this->frase);
             ?>
         </div>
 <?php
     }
 }
+$sql = "SELECT * FROM tb_pessoas;";
+$stmt = $conection->prepare($sql);
+$stmt->execute();
+$result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
-new Pessoa("Kawan", "Araújo", "M", 18);
-new Pessoa("João Vitor", "Pinheiro", "M", 17);
-new Pessoa("zaias", "Roberto", "M", 18);
-new Pessoa("Queque", "Santos", "F", 18);
-define('TITULO', 'Fundamentos basicos');
+foreach ($result as $pessoa) {
+    new Pessoa(
+        $pessoa['user_id'],
+        $pessoa['user_nome'],
+        $pessoa['user_sobrenome'],
+        $pessoa['user_genero'],
+        $pessoa['user_idade'],
+        $pessoa['user_frase']
+    );
+}
 ?>

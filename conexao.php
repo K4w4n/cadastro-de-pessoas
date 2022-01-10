@@ -4,7 +4,15 @@ define('BANCODEDADOS', 'db_kawan');
 define('USUARIO', 'app');
 define('SENHA', 'z&Y2pyUvys4fIAy*r$AFgbPnZSD');
 
-$mysqli = new mysqli(HOSTNAME, USUARIO, SENHA, BANCODEDADOS);
-if ($mysqli->connect_errno) {
-    echo 'houve um erro na conexão do banco de dados';
-}
+$conection = new mysqli(HOSTNAME, USUARIO, SENHA, BANCODEDADOS);
+if ($conection->connect_errno) : ?>
+    <div id="status-conexao" class="erro">
+        Banco de dados não conectado
+    </div>
+<?php else : ?>
+    <div id="status-conexao" class="sucesso">
+        Banco de dados conectado
+    </div>
+<?php
+endif;
+?>
