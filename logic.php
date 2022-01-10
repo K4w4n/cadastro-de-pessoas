@@ -3,8 +3,8 @@ function printDado($dataName, $dataContent)
 {
 ?>
     <div class="dado">
-        <label class="data-name"><?= $dataName ?>: </label>
-        <label class="data-content"><?= $dataContent ?></label>
+        <label class="data-name"><?= htmlentities($dataName) ?>: </label>
+        <label class="data-content"><?= htmlentities($dataContent) ?></label>
     </div>
     <?php
 }
@@ -16,8 +16,8 @@ class Pessoa
     {
         foreach (self::$list as $pessoaSelecionada) :
     ?>
-            <div class="pessoa-card">
-                <div class="id-user"><?= $pessoaSelecionada->id ?></div>
+            <div class="pessoa-card cartao-flutuante">
+                <div class="id-user"><?= htmlentities($pessoaSelecionada->id) ?></div>
                 <?php
                 printDado("Nome", $pessoaSelecionada->nome);
                 printDado("Sobrenome", $pessoaSelecionada->sobrenome);
@@ -38,20 +38,6 @@ class Pessoa
         $this->frase = $novaFrase;
         self::$list[] = $this;
         $this->id = $id;
-    }
-    public function print()
-    {
-        ?>
-        <div class="pessoa-card">
-            <?php
-            printDado("Nome", $this->nome);
-            printDado("Sobrenome", $this->sobrenome);
-            printDado("Genero", $this->genero);
-            printDado("Idade", $this->idade);
-            PrintDado('Frase', $this->frase);
-            ?>
-        </div>
-<?php
     }
 }
 $sql = "SELECT * FROM tb_pessoas;";
