@@ -21,6 +21,9 @@
     <div id="pessoa-card-area">
         <?php Pessoa::printAll(); ?>
     </div>
+    <div id="lista-paginas">
+        <?php sumarioPaginas($paginaAtual/10, $quantidadePaginas) ?>
+    </div>
 </body>
 
 </html>

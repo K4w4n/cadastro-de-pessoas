@@ -40,8 +40,29 @@ class Pessoa
         $this->id = $id;
     }
 }
-$sql = "SELECT * FROM tb_pessoas;";
+function sumarioPaginas($paginaAtual, $quantidadePaginas)
+{
+    $iInicial = ($paginaAtual <= 5) ? 1 : ($paginaAtual - 4);
+    $iFinal = ($iInicial + 9) <= $quantidadePaginas ? ($iInicial + 9) : $quantidadePaginas;
+    for ($i = $iInicial; $i <= $iFinal; $i++) {
+        $class = "numero-pg" . ($i == ($paginaAtual + 1) ? ' selecionado' : '');
+        ?>
+        <a class="<?= $class ?>" href="?pg=<?= $i ?>"><?= $i ?></a>
+<?php
+    }
+}
+
+$sql = 'SELECT COUNT(*) AS quantidade FROM tb_pessoas';
 $stmt = $conection->prepare($sql);
+$stmt->execute();
+$result = $stmt->get_result()->fetch_object();
+$quantidadePaginas = ceil(($result->quantidade) / 10);
+
+
+$sql = "SELECT * FROM tb_pessoas LIMIT ?, 10;";
+$stmt = $conection->prepare($sql);
+$paginaAtual = (isset($_GET['pg']) ? intval($_GET['pg']) - 1 : 0) * 10;
+$stmt->bind_param('i', $paginaAtual);
 $stmt->execute();
 $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
