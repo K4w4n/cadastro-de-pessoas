@@ -10,6 +10,19 @@ html, body, #pessoa-card-area {
     height: 100%;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.178);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(189, 189, 189);
+    border-radius: 20px;
+}
+
 #pessoa-card-area {
     display: flex;
     flex-direction: column;
