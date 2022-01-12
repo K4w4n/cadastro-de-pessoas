@@ -61,7 +61,7 @@ body::-webkit-scrollbar-thumb {
     color: rgb(71, 70, 70);
     margin: 0 auto 20px;
     border-radius: 10px;
-    width: 25%;
+    width: 40%;
     border-color: rgb(53, 53, 53);
     border-width: 2px;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
@@ -70,11 +70,6 @@ body::-webkit-scrollbar-thumb {
 .cartao-flutuante, #add-pessoas, #voltar {
     transition-property: transform, box-shadow;
     transition-duration: 0.5s;
-}
-
-.cartao-flutuante:hover, #add-pessoas:hover, #voltar:hover {
-    box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.25);
-    transform: scale(1.1);
 }
 
 .dado {
@@ -88,11 +83,10 @@ body::-webkit-scrollbar-thumb {
 
 #add-pessoas, #voltar {
     position: fixed;
-    top: 90%;
-    left: 95%;
-    width: 50px;
-    height: 50px;
-    padding-top: 2px;
+    bottom: 0.5em;
+    right: 0.5em;
+    width: 1em;
+    height: 1em;
     background-color: rgb(66, 66, 66);
     font-size: xx-large;
     color: #fff;
@@ -101,9 +95,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 #add-pessoas .texto, #voltar .texto {
-    position: relative;
     text-align: center;
-    line-height: 50px;
+    line-height: 1em;
     user-select: none;
 }
 
@@ -153,6 +146,7 @@ body::-webkit-scrollbar-thumb {
 .numero-pg:hover {
     background-color: rgb(199, 199, 199);
 }
+
 .selecionado:hover {
     background-color: rgb(26, 26, 26);
 }
@@ -162,4 +156,21 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
 }
 
-@media only screen and (min-width: 600px) {}
+@media all and (min-width: 60em) {
+    .cartao-flutuante:hover, #add-pessoas:hover, #voltar:hover {
+        box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.25);
+        transform: scale(1.1);
+    }
+}
+
+@media all and (max-width: 60em) {
+    .cartao-flutuante {
+        width: 50%;
+    }
+}
+
+@media all and (max-width: 30em) {
+    .cartao-flutuante {
+        width: 100%;
+    }
+}
