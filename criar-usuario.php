@@ -12,9 +12,7 @@
 
 <body>
     <?php include './conexao.php'; ?>
-    <div id="voltar">
-        <div class="texto">🠸</div>
-    </div>
+    <div id="voltar" class="btn-flutuante"></div>
     <h1 id="pg-titulo">Cadastrar pessoas</h1>
     <form id="form-criar-usuario" action="criar-usuario.php" method="post" class="cartao-flutuante">
         <input type="text" name="nome" id="nome" placeholder="Nome">

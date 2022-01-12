@@ -1,7 +1,9 @@
+/* Pré configurações iniciais: */
+
 * {
     border-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: sans-serif;
 }
 
@@ -29,26 +31,18 @@ body::-webkit-scrollbar-thumb {
     border-radius: 20px;
 }
 
-#pessoa-card-area {
-    display: flex;
-    flex-direction: column;
-}
-
 #pg-titulo {
     text-align: center;
     margin-bottom: 10px;
     color: rgb(46, 46, 46);
 }
 
-.id-user {
-    width: 100%;
-    background-color: rgb(53, 53, 53);
-    color: #fff;
-    font-weight: 550;
-    padding: 10px 0px 10px 0px;
-    border-radius: 10px 10px 0px 0px;
-    text-align: center;
+#pessoa-card-area {
+    display: flex;
+    flex-direction: column;
 }
+
+/* Cartao com informações de pessoas: */
 
 .pessoa-card {
     cursor: pointer;
@@ -67,9 +61,14 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
 }
 
-.cartao-flutuante, #add-pessoas, #voltar {
-    transition-property: transform, box-shadow;
-    transition-duration: 0.5s;
+.id-user {
+    width: 100%;
+    background-color: rgb(53, 53, 53);
+    color: #fff;
+    font-weight: 550;
+    padding: 10px 0px 10px 0px;
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
 }
 
 .dado {
@@ -81,24 +80,35 @@ body::-webkit-scrollbar-thumb {
     font-weight: 900;
 }
 
-#add-pessoas, #voltar {
-    position: fixed;
-    bottom: 0.5em;
-    right: 0.5em;
-    width: 1em;
-    height: 1em;
-    background-color: rgb(66, 66, 66);
-    font-size: xx-large;
-    color: #fff;
-    border-radius: 100%;
-    cursor: pointer;
+.cartao-flutuante, .btn-flutuante {
+    transition-property: transform, box-shadow;
+    transition-duration: 0.5s;
 }
 
-#add-pessoas .texto, #voltar .texto {
-    text-align: center;
-    line-height: 1em;
-    user-select: none;
+/* Botão flutuante inferior direito: */
+
+.btn-flutuante {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+#add-pessoas {
+    background-image: url("/aprendendo%20php/img/mais.png");
+}
+
+#voltar {
+    background-image: url("/aprendendo%20php/img/volte.png");
+}
+
+/* Mensagem de conexão com banco de dados: */
 
 #status-conexao {
     background-color: rgb(53, 53, 53);
@@ -121,6 +131,7 @@ body::-webkit-scrollbar-thumb {
     display: none;
 }
 
+/* Indice das paginas: */
 #lista-paginas {
     display: flex;
     flex-direction: row;
@@ -147,17 +158,19 @@ body::-webkit-scrollbar-thumb {
     background-color: rgb(199, 199, 199);
 }
 
-.selecionado:hover {
-    background-color: rgb(26, 26, 26);
-}
-
-.selecionado {
+.pg-selecionada {
     background-color: rgb(53, 53, 53);
     color: #fff;
 }
 
+.pg-selecionada:hover {
+    background-color: rgb(26, 26, 26);
+}
+
+/* Responsividade: */
+
 @media all and (min-width: 60em) {
-    .cartao-flutuante:hover, #add-pessoas:hover, #voltar:hover {
+    .cartao-flutuante:hover, .btn-flutuante:hover {
         box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.25);
         transform: scale(1.1);
     }
@@ -171,6 +184,6 @@ body::-webkit-scrollbar-thumb {
 
 @media all and (max-width: 30em) {
     .cartao-flutuante {
-        width: 100%;
+        width: 97%;
     }
 }

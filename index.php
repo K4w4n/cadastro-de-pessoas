@@ -15,9 +15,7 @@
     include './conexao.php';
     include './logic.php';
     ?>
-    <div id="add-pessoas">
-        <div class="texto">+</div>
-    </div>
+    <div id="add-pessoas" class="btn-flutuante"></div>
     <h1 id="pg-titulo">Pessoas</h1>
     <div id="pessoa-card-area">
         <?php Pessoa::printAll(); ?>
