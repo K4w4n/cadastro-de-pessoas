@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -155,27 +156,12 @@ body::-webkit-scrollbar-thumb {
     color: rgb(53, 53, 53);
 }
 
-.numero-pg:hover {
-    background-color: rgb(199, 199, 199);
-}
-
 .pg-selecionada {
     background-color: rgb(53, 53, 53);
     color: #fff;
 }
 
-.pg-selecionada:hover {
-    background-color: rgb(26, 26, 26);
-}
-
 /* Responsividade: */
-
-@media all and (min-width: 60em) {
-    .cartao-flutuante:hover, .btn-flutuante:hover {
-        box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.25);
-        transform: scale(1.1);
-    }
-}
 
 @media all and (max-width: 60em) {
     .cartao-flutuante {
@@ -186,5 +172,22 @@ body::-webkit-scrollbar-thumb {
 @media all and (max-width: 30em) {
     .cartao-flutuante {
         width: 97%;
+    }
+}
+
+/* Habilitando hover somente em dispositivos com mouse */
+
+@media (hover: hover) and (pointer: fine) {
+    .numero-pg:hover {
+        background-color: rgb(199, 199, 199);
+    }
+
+    .pg-selecionada:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
+    .cartao-flutuante:hover, .btn-flutuante:hover {
+        box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.25);
+        transform: scale(1.1);
     }
 }
