@@ -102,11 +102,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 #add-pessoas {
-    background-image: url("/aprendendo%20php/img/mais.png");
+    background-image: url("../img/mais.png");
 }
 
 #voltar {
-    background-image: url("/aprendendo%20php/img/volte.png");
+    background-image: url("../img/volte.png");
 }
 
 /* Mensagem de conexão com banco de dados: */

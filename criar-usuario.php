@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
     $stmt->bind_param('sssis', $_POST['nome'], $_POST['sobrenome'], $_POST['genero'], $_POST['idade'], $_POST['frase']);
     $stmt->execute();
     $result = $stmt->get_result();
-    header('Location:/aprendendo php/');
+    header('Location:./');
 }
 
 ?>
