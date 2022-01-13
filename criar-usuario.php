@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="img/estudando.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0">
     <script src="javascript/script.js" defer></script>
+    <script src="javascript/cadastrar-pessoas.js" defer></script>
 </head>
 
 <body>
@@ -16,11 +17,11 @@
     <div id="voltar" class="btn-flutuante"></div>
     <h1 id="pg-titulo">Cadastrar pessoas</h1>
     <form id="form-criar-usuario" action="criar-usuario.php" method="post" class="cartao-flutuante">
-        <input type="text" name="nome" id="nome" placeholder="Nome">
+        <input type="text" name="nome" id="nome" placeholder="Nome" required>
 
-        <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome">
+        <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required>
 
-        <select name="genero" id="genero">
+        <select name="genero" id="genero" required>
             <option value="" disabled selected>Genêro</option>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>

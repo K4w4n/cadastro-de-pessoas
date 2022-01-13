@@ -52,7 +52,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .cartao-flutuante {
-    background-color: rgba(39, 39, 39, 0.082);
+    background-color: rgb(255, 255, 255);
     color: rgb(71, 70, 70);
     margin: 0 auto 20px;
     border-radius: 10px;
