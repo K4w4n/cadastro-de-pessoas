@@ -42,14 +42,22 @@ class Pessoa
 }
 function sumarioPaginas($paginaAtual, $quantidadePaginas)
 {
+    $paginaAtual++;
+
     $indexInicial = ($paginaAtual <= 5) ? 1 : ($paginaAtual - 4);
     $indexFinal = ($indexInicial + 9) <= $quantidadePaginas ? ($indexInicial + 9) : $quantidadePaginas;
 
+    $href = $paginaAtual == 1 ? '' : ' href = "?pg=' . ($paginaAtual - 1) . '"';
+    echo ('<a class = "item-sumario seta"' . $href . '>&lt;</a>');
+
     for ($i = $indexInicial; $i <= $indexFinal; $i++) {
-        $class = 'class = "numero-pg' . ($i == ($paginaAtual + 1) ? ' pg-selecionada' : '') . '"';
+        $class = 'class = "item-sumario numero' . ($i == ($paginaAtual) ? ' pg-selecionada' : '') . '"';
         $href = 'href = "?pg=' . $i . '"';
         echo "<a $class $href>$i</a>";
     }
+
+    $href = $paginaAtual == $quantidadePaginas ? '' : ' href = "?pg=' . ($paginaAtual + 1) . '"';
+    echo ('<a class = "item-sumario seta"' . $href . '>&gt;</a>');
 }
 
 $sql = 'SELECT COUNT(*) AS quantidade FROM tb_pessoas';
@@ -63,6 +71,7 @@ $sql = "SELECT * FROM tb_pessoas LIMIT ?, 10;";
 $stmt = $conection->prepare($sql);
 $paginaAtual = (isset($_GET['pg']) ? intval($_GET['pg']) - 1 : 0) * 10;
 $stmt->bind_param('i', $paginaAtual);
+$paginaAtual /= 10;
 $stmt->execute();
 $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 

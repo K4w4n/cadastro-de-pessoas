@@ -137,10 +137,12 @@ body::-webkit-scrollbar-thumb {
 #lista-paginas {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
 }
 
-.numero-pg {
+.item-sumario {
     transition-property: background-color;
     transition-duration: 0.5s;
     display: flex;
@@ -148,12 +150,21 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     width: 30px;
     height: 30px;
-    border-color: #fff;
     border-width: 1px;
     border-style: solid;
+    border-radius: 3px;
     text-align: center;
     text-decoration: none;
     color: rgb(53, 53, 53);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+.item-sumario.seta {
+    border-color: rgb(134, 134, 134);
+}
+
+.item-sumario.numero {
+    border-color: rgba(255, 255, 255, 0);
 }
 
 .pg-selecionada {
@@ -164,13 +175,13 @@ body::-webkit-scrollbar-thumb {
 /* Responsividade: */
 
 @media all and (max-width: 60em) {
-    .cartao-flutuante {
+    .cartao-flutuante, #lista-paginas {
         width: 50%;
     }
 }
 
 @media all and (max-width: 30em) {
-    .cartao-flutuante {
+    .cartao-flutuante, #lista-paginas {
         width: 97%;
     }
 }
@@ -178,12 +189,22 @@ body::-webkit-scrollbar-thumb {
 /* Habilitando hover somente em dispositivos com mouse */
 
 @media (hover: hover) and (pointer: fine) {
-    .numero-pg:hover {
-        background-color: rgb(199, 199, 199);
+    .item-sumario.numero:hover {
+        background-color: rgb(224, 224, 224);
     }
 
-    .pg-selecionada:hover {
+    .item-sumario.pg-selecionada:hover {
         background-color: rgb(26, 26, 26);
+    }
+
+    .item-sumario.seta:hover {
+        background-color: rgb(26, 26, 26);
+        color: #fff;
+    }
+
+    .item-sumario {
+        cursor: pointer;
+        user-select: none;
     }
 
     .cartao-flutuante:hover, .btn-flutuante:hover {

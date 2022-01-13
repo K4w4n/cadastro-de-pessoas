@@ -21,7 +21,7 @@
         <?php Pessoa::printAll(); ?>
     </div>
     <div id="lista-paginas">
-        <?php sumarioPaginas($paginaAtual/10, $quantidadePaginas) ?>
+        <?php sumarioPaginas($paginaAtual, $quantidadePaginas) ?>
     </div>
 </body>
 
