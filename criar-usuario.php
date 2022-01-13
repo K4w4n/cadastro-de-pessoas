@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="img/estudando.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0">
     <script src="javascript/script.js" defer></script>
-    <script src="javascript/cadastrar-pessoas.js" defer></script>
 </head>
 
 <body>
