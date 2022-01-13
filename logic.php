@@ -26,7 +26,7 @@ class Pessoa
                 printDado('Frase', $pessoaSelecionada->frase);
                 ?>
             </div>
-        <?php
+<?php
         endforeach;
     }
     function __construct($id, $novoNome, $novoSobrenome, $novoGenero, $novaIdade, $novaFrase)
@@ -42,13 +42,13 @@ class Pessoa
 }
 function sumarioPaginas($paginaAtual, $quantidadePaginas)
 {
-    $iInicial = ($paginaAtual <= 5) ? 1 : ($paginaAtual - 4);
-    $iFinal = ($iInicial + 9) <= $quantidadePaginas ? ($iInicial + 9) : $quantidadePaginas;
-    for ($i = $iInicial; $i <= $iFinal; $i++) {
-        $class = "numero-pg" . ($i == ($paginaAtual + 1) ? ' pg-selecionada' : '');
-        ?>
-        <a class="<?= $class ?>" href="?pg=<?= $i ?>"><?= $i ?></a>
-<?php
+    $indexInicial = ($paginaAtual <= 5) ? 1 : ($paginaAtual - 4);
+    $indexFinal = ($indexInicial + 9) <= $quantidadePaginas ? ($indexInicial + 9) : $quantidadePaginas;
+
+    for ($i = $indexInicial; $i <= $indexFinal; $i++) {
+        $class = 'class = "numero-pg' . ($i == ($paginaAtual + 1) ? ' pg-selecionada' : '') . '"';
+        $href = 'href = "?pg=' . $i . '"';
+        echo "<a $class $href>$i</a>";
     }
 }
 
