@@ -28,9 +28,9 @@
             <option value="nao dizer">Prefiro não dizer</option>
         </select>
 
-        <input type="number" name="idade" id="idade" min="0" max="150" placeholder="idade">
+        <input type="number" name="idade" id="idade" min="0" max="150" placeholder="idade" required>
 
-        <input type="text" name="frase" id="frase" placeholder="Frase">
+        <input type="text" name="frase" id="frase" placeholder="Frase" required>
 
         <input type="submit" name="submit" value="Let's go" id="submit">
     </form>
