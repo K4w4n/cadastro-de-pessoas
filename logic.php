@@ -12,6 +12,16 @@ function printDado($dataName, $dataContent)
 class Pessoa
 {
     public static $list = [];
+    function __construct($id, $novoNome, $novoSobrenome, $novoGenero, $novaIdade, $novaFrase)
+    {
+        $this->id = $id;
+        $this->nome = $novoNome;
+        $this->sobrenome = $novoSobrenome;
+        $this->genero = $novoGenero;
+        $this->idade = $novaIdade;
+        $this->frase = $novaFrase;
+        self::$list[] = $this;
+    }
     public static function printAll()
     {
         foreach (self::$list as $pessoaSelecionada) :
@@ -28,16 +38,6 @@ class Pessoa
             </div>
 <?php
         endforeach;
-    }
-    function __construct($id, $novoNome, $novoSobrenome, $novoGenero, $novaIdade, $novaFrase)
-    {
-        $this->nome = $novoNome;
-        $this->sobrenome = $novoSobrenome;
-        $this->genero = $novoGenero;
-        $this->idade = $novaIdade;
-        $this->frase = $novaFrase;
-        self::$list[] = $this;
-        $this->id = $id;
     }
 }
 function sumarioPaginas($paginaAtual, $quantidadePaginas)
@@ -66,14 +66,13 @@ $stmt->execute();
 $result = $stmt->get_result()->fetch_object();
 $quantidadePaginas = ceil(($result->quantidade) / 10);
 
-
 $sql = "SELECT * FROM tb_pessoas LIMIT ?, 10;";
 $stmt = $conection->prepare($sql);
 $paginaAtual = (isset($_GET['pg']) ? intval($_GET['pg']) - 1 : 0) * 10;
 $stmt->bind_param('i', $paginaAtual);
-$paginaAtual /= 10;
 $stmt->execute();
 $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$paginaAtual /= 10;
 
 foreach ($result as $pessoa) {
     new Pessoa(
