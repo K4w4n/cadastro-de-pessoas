@@ -2,16 +2,18 @@
 include 'model\conexao.php';
 include 'model\Pessoa.php';
 
+$conexaoDb = conectarBd();
+
 /* Obtendo quantidade de paginas */
 $sql = 'SELECT COUNT(*) AS quantidade FROM tb_pessoas';
-$stmt = $conection->prepare($sql);
+$stmt = $conexaoDb->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result()->fetch_object();
 $quantidadePaginas = ceil(($result->quantidade) / 10);
 
 /* Obtendo uma pagina de dados */
 $sql = "SELECT * FROM tb_pessoas LIMIT ?, 10;";
-$stmt = $conection->prepare($sql);
+$stmt = $conexaoDb->prepare($sql);
 $paginaAtual = (isset($_GET['pg']) ? intval($_GET['pg']) - 1 : 0) * 10;
 $stmt->bind_param('i', $paginaAtual);
 $stmt->execute();
@@ -43,6 +45,7 @@ foreach ($listaPessoas as $pessoa) {
 </head>
 
 <body>
+    <?php desenharConexao($conexaoDb); ?>
     <div id="add-pessoas" class="btn-flutuante"></div>
     <h1 id="pg-titulo">Pessoas</h1>
     <div id="pessoa-card-area">
