@@ -1,3 +1,35 @@
+<?php
+include 'model\conexao.php';
+include 'model\Pessoa.php';
+
+/* Obtendo quantidade de paginas */
+$sql = 'SELECT COUNT(*) AS quantidade FROM tb_pessoas';
+$stmt = $conection->prepare($sql);
+$stmt->execute();
+$result = $stmt->get_result()->fetch_object();
+$quantidadePaginas = ceil(($result->quantidade) / 10);
+
+/* Obtendo uma pagina de dados */
+$sql = "SELECT * FROM tb_pessoas LIMIT ?, 10;";
+$stmt = $conection->prepare($sql);
+$paginaAtual = (isset($_GET['pg']) ? intval($_GET['pg']) - 1 : 0) * 10;
+$stmt->bind_param('i', $paginaAtual);
+$stmt->execute();
+$listaPessoas = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$paginaAtual /= 10;
+
+/* Gerando pessoas */
+foreach ($listaPessoas as $pessoa) {
+    new Pessoa(
+        $pessoa['user_id'],
+        $pessoa['user_nome'],
+        $pessoa['user_sobrenome'],
+        $pessoa['user_genero'],
+        $pessoa['user_idade'],
+        $pessoa['user_frase']
+    );
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,10 +43,6 @@
 </head>
 
 <body>
-    <?php
-    include 'model\conexao.php';
-    include 'model\logic.php';
-    ?>
     <div id="add-pessoas" class="btn-flutuante"></div>
     <h1 id="pg-titulo">Pessoas</h1>
     <div id="pessoa-card-area">
