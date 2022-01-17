@@ -175,8 +175,12 @@ body::-webkit-scrollbar-thumb {
 /* Responsividade: */
 
 @media all and (max-width: 60em) {
-    .cartao-flutuante, #lista-paginas {
+    .cartao-flutuante {
         width: 50%;
+    }
+    #lista-paginas{
+        width: 100%;
+
     }
 }
 
