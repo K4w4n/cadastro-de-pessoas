@@ -1,0 +1,52 @@
+* {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+p {
+    color: #606060;
+    text-align: center;
+}
+
+.page-404 {
+    color: #000;
+    font-size: 10em;
+}
+
+.not-found {
+    font-size: 2.5em;
+}
+
+.msg-not-found {
+    margin-top: 2em;
+    width: 50%;
+}
+
+a:link {
+    color: #606060;
+}
+
+a:visited {
+    color: #434343;
+}
+
+@media (max-width:40em) {
+    .msg-not-found {
+        width: 98%;
+    }
+}
