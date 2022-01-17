@@ -137,7 +137,7 @@ body::-webkit-scrollbar-thumb {
 #lista-paginas {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 40%;
     margin: 0 auto;
 }
