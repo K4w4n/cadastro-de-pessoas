@@ -263,14 +263,19 @@ body.parar-scroll {
     }
 
     .menu-itens.aparecer-menu>li {
-        padding: 1em;
+        display: flex;
         box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.25);
         margin-bottom: 1em;
+        height: 3em;
     }
-
+    
     .menu-itens.aparecer-menu>li>a {
         width: 100%;
         height: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
