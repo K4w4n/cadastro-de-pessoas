@@ -172,21 +172,115 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
 }
 
+/* Menu hamburger: */
+
+.menu, .menu-itens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-itens {
+    width: 40%;
+    list-style: none;
+    justify-content: end;
+}
+
+.menu {
+    padding: 1em;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1em;
+    justify-content: space-between;
+}
+
+.menu-itens a {
+    padding: 0.6em;
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+    white-space: nowrap;
+    border-radius: 0.2em;
+}
+
+.menu-itens li {
+    margin: 0em 1.4em 0em 1.4em;
+}
+
+.btn-hamburger, .ocultar-botao {
+    display: none;
+}
+
+body.parar-scroll {
+    overflow-y: hidden;
+}
+
 /* Responsividade: */
 
 @media all and (max-width: 60em) {
     .cartao-flutuante {
         width: 50%;
     }
-    #lista-paginas{
-        width: 100%;
 
+    #lista-paginas {
+        width: 100%;
+    }
+
+    .menu-itens {
+        display: none;
+    }
+
+    .menu {
+        flex-direction: row-reverse;
+    }
+
+    .btn-hamburger {
+        display: block;
+        background-color: #fff;
+        background-image: url("../img/menu.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 2em;
+        height: 2em;
+    }
+
+    .btn-hamburger.active {
+        background-image: url("../img/x.png");
+    }
+
+    .menu-itens.aparecer-menu {
+        height: 100%;
+        width: 80%;
+        position: absolute;
+        top: 4em;
+        left: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 1em;
+        background-color: #fff;
+        box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.25);
+        z-index: 100;
+    }
+
+    .menu-itens.aparecer-menu>li {
+        padding: 1em;
+        box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.25);
+        margin-bottom: 1em;
+    }
+
+    .menu-itens.aparecer-menu>li>a {
+        width: 100%;
+        height: 100%;
     }
 }
 
 @media all and (max-width: 30em) {
     .cartao-flutuante, #lista-paginas {
         width: 97%;
+    }
+
+    #add-pessoas {
+        display: none;
     }
 }
 
@@ -214,5 +308,13 @@ body::-webkit-scrollbar-thumb {
     .cartao-flutuante:hover, .btn-flutuante:hover {
         box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.25);
         transform: scale(1.1);
+    }
+
+    .menu-itens a:hover {
+        background-color: rgb(0, 0, 0, 0.07);
+    }
+
+    .btn-hamburger {
+        cursor: pointer;
     }
 }

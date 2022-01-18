@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <?php desenharConexao($conexaoDb); ?>
+    <?php include 'componentes/menu.php'; ?>
     <div id="voltar" class="btn-flutuante"></div>
     <h1 id="pg-titulo">Cadastrar pessoas</h1>
     <form id="form-criar-usuario" action="criar-usuario" method="post" class="cartao-flutuante">

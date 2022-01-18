@@ -12,7 +12,7 @@ else :
     $stmt->execute();
     $result = $stmt->get_result()->fetch_object();
     $quantidadePaginas = ceil(($result->quantidade) / 10);
-    
+
     if ($quantidadePaginas < ($paginaAtual / 10 + 1)) : include '404.php';
     else :
         /* Obtendo uma pagina de dados */
@@ -49,7 +49,7 @@ else :
         </head>
 
         <body>
-            <?php desenharConexao($conexaoDb); ?>
+            <?php include 'componentes/menu.php'; ?>
             <div id="add-pessoas" class="btn-flutuante"></div>
             <h1 id="pg-titulo">Pessoas</h1>
             <div id="pessoa-card-area">
