@@ -20,7 +20,8 @@ sistema PHP, servindo como um guia prático para te ensinar conceitos importante
     * Envio de formularios
     * Paginação de dados
     * [Prevenção de SQL injection e XSS](https://viniciusmouraesilva.github.io/seguranca_aplicacoes_web/)
-    * [Responssividade](https://polypane.app/blog/the-complete-guide-to-css-media-queries)  
+    * [Responssividade](https://polypane.app/blog/the-complete-guide-to-css-media-queries)
+    * Criar Navbar   
 
 Espero que goste do projeto e sinta-se livre para dar commits e issues daquilo que achar necessario, vamos juntos fazer uma comunidade melhor!
 
