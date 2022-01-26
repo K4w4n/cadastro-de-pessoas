@@ -10,7 +10,7 @@ sistema PHP, servindo como um guia prático para te ensinar conceitos importante
     * Criar classes e funções
     * Concatenação
     * Uso do `mysqli`
-    * Padão MVC
+    * Padrão MVC
 
 * **CSS**:
     * Sintaxe
