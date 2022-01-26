@@ -12,7 +12,7 @@ class PessoaController extends Controller
 
     public function index()
     {
-        header("Location: /cadastro-de-pessoas/pessoa/pagina/1");
+        header("Location: /pessoa/pagina/1");
     }
 
     /**
@@ -66,7 +66,7 @@ class PessoaController extends Controller
             $idOrError = People::register($name, $surname, $gender, $age, $phrase);
             $haveErro = is_a($idOrError, 'ErrorMenssage');
 
-            if (!$haveErro) header('Location: /cadastro-de-pessoas/pessoa');
+            if (!$haveErro) header('Location: /pessoa');
         }
 
         $this->loadView('cadastro-pessoas');

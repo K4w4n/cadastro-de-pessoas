@@ -35,7 +35,7 @@ global $phrase;
 
     <h1 id="pg-titulo">Cadastrar pessoas</h1>
 
-    <form id="form-criar-usuario" action="/cadastro-de-pessoas/pessoa/cadastro" method="post" class="cartao-flutuante">
+    <form id="form-criar-usuario" action="/pessoa/cadastro" method="post" class="cartao-flutuante">
 
         <input type="text" name="nome" id="nome" placeholder="Nome" required value="<?= $name ?>">
 

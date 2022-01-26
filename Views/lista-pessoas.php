@@ -64,16 +64,16 @@ $quantidadePaginas = $summaryInfo['quantidadePaginas'];
     </div>
     <div id="lista-paginas">
         <?php
-        $href = $currentPage == 1 ? '' : ' href = "/cadastro-de-pessoas/pessoa/pagina/' . ($currentPage - 1) . '"';
+        $href = $currentPage == 1 ? '' : ' href = "/pessoa/pagina/' . ($currentPage - 1) . '"';
         echo ('<a class = "item-sumario seta"' . $href . '>&lt;</a>');
 
         for ($i = $indexInicial; $i <= $indexFinal; $i++) {
             $class = 'class = "item-sumario numero' . ($i == ($currentPage) ? ' pg-selecionada' : '') . '"';
-            $href = 'href = "/cadastro-de-pessoas/pessoa/pagina/' . $i . '"';
+            $href = 'href = "/pessoa/pagina/' . $i . '"';
             echo "<a $class $href>$i</a>";
         }
 
-        $href = $currentPage == $quantidadePaginas ? '' : ' href = "/cadastro-de-pessoas/pessoa/pagina/' . ($currentPage + 1) . '"';
+        $href = $currentPage == $quantidadePaginas ? '' : ' href = "/pessoa/pagina/' . ($currentPage + 1) . '"';
         echo ('<a class = "item-sumario seta"' . $href . '>&gt;</a>');
         ?>
     </div>
