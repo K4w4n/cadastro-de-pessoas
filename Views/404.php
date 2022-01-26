@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0">
-    <link rel="shortcut icon" href="/cadastro-de-pessoas/img/estudando.png" type="image/x-icon">
-    <link rel="stylesheet" href="/cadastro-de-pessoas/css/404.css">
+    <link rel="shortcut icon" href="/img/estudando.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/404.css">
     <title>404 - Not Found</title>
 </head>
 

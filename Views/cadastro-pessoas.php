@@ -14,11 +14,11 @@ global $phrase;
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar pessoas</title>
-    <link rel="stylesheet" href="/cadastro-de-pessoas/css/style.css">
-    <link rel="stylesheet" href="/cadastro-de-pessoas/css/style-criar-usuario.css">
-    <link rel="shortcut icon" href="/cadastro-de-pessoas/img/estudando.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-criar-usuario.css">
+    <link rel="shortcut icon" href="/img/estudando.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0">
-    <script src="/cadastro-de-pessoas/javascript/script.js" defer></script>
+    <script src="/javascript/script.js" defer></script>
 </head>
 
 <body>
