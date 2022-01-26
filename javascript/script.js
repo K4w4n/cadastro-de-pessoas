@@ -1,11 +1,11 @@
 const addPessoas = document.querySelector('#add-pessoas');
 if (addPessoas) addPessoas.addEventListener('click', () => {
-    window.location.assign('./criar-usuario');
+    window.location.assign('/cadastro-de-pessoas/pessoa/cadastro');
 });
 
 const voltar = document.querySelector('#voltar');
 if (voltar) voltar.addEventListener('click', () => {
-    window.location.assign('./');
+    window.location.assign('/cadastro-de-pessoas/');
 });
 
 
