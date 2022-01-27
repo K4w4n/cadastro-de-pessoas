@@ -19,12 +19,6 @@ class Database
 
     public function connect()
     {
-        echo '_______________________________<br>';
-        echo $this->host.'<br><br>';
-        echo $this->name.'<br><br>';
-        echo $this->user.'<br><br>';
-        echo $this->pass.'<br><br>';
-        echo '_______________________________<br>';
         $this->connection = new mysqli($this->host,  $this->user, $this->pass, $this->name);
         return $this->connection;
     }
