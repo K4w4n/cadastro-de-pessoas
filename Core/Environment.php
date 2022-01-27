@@ -10,7 +10,7 @@ class Environment
     {
         $dirEnv = $dir . '.env';
 
-        if (!file_exists($dirEnv)) return;
+        if (!file_exists($dirEnv) || getEnv('DB_HOST')) return;
 
 
         $lines = file($dirEnv);
